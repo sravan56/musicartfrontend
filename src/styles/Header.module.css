@@ -1,0 +1,36 @@
+
+body{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+
+}
+.header{
+    background:#2E0052;
+    color:white;
+    padding:10px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    font-size: 10px;
+    font-family: 'Roboto',sans-serif;
+    color:white;
+    padding:1px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    box-sizing: border-box;
+    
+  }
+  .linkstyle{
+    color:white;
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px){
+    .header{
+      display:none;
+    }
+  }
