@@ -85,24 +85,27 @@ const Checkout = ({ cartItems, userId,userName,isLoggedIn,handleLogout}) => {
         ):(
           <div className={style.BackLink}>
           <button onClick={handleBack} className={style.backButton}>
-          Back to products
+          Back to Cart
         </button>
+        <h2 className={style.checkoutHeader}>Checkout</h2>
         </div>
         )}
-      <h2 className={style.checkoutHeader}>Checkout</h2>
+      
 
       <div className={style.checkoutContent}>
        <div className={style.checkoutDivision}>
       <div className={style.checkoutSection}>
         <h3>1. Delivery address</h3>
+        <div>
         <p>{userName}</p>
-        <input
+        <textarea
           type="text"
           placeholder="Enter your delivery address"
           value={deliveryAddress}
           onChange={(e) => setDeliveryAddress(e.target.value)}
           className={style.addressInput}
         />
+        </div>
       </div>
       <hr/>
 

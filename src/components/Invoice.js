@@ -59,12 +59,13 @@ const Invoice = ({ isLoggedIn, handleLogout }) => {
             <button onClick={handleBack} className={style.backButton}>
               Back to products
             </button>
+            <h2 className={style.invoiceHeader}>Invoice</h2>
           </div>
         )}
-        <h2 className={style.invoiceHeader}>Invoice</h2>
+        
 
         <div className={style.invoiceContent}>
-          <div className={style.invoiceDisvison}>
+          <div className={style.invoiceDivision}>
             <div className={style.invoiceSection}>
               <h3>1.Delivery Address</h3>
               <p>{order.deliveryAddress}</p>

@@ -1,27 +1,28 @@
 /* Invoice.module.css */
 
 .mainContainer {
-  margin: 0;
+  margin: 20px;
+  margin-top: 50px;
   padding: 0;
   box-sizing: border-box;
   height:100%;
 }
 
 .invoiceContainer {
-  margin: 20px;
-  margin-top: 40px;
+  margin:20px;
 }
 
 .BackLink {
-  float: left;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .backButton {
   background-color: #2e0052;
   color: white;
   border: none;
+  width:200px;
+  font-size: 16px;
   padding: 8px 16px;
   cursor: pointer;
   margin-bottom: 20px;
@@ -41,7 +42,12 @@
 
 }
 .orderSummary{
-  width:200px;
+  flex: 1;
+  border-radius: 6px;
+  border: 2px solid #E1E1E1;
+  margin: 20px;
+  margin-top:0px;
+  padding: 20px;
 }
 .invoiceSection {
   margin-bottom: 20px;
@@ -88,11 +94,11 @@
 
 .orderSummary {
   float: right;
-  width: 300px;
-  height: 300px;
   border-radius: 6px;
-  border: 2px solid #e1e1e1;
-  margin: 20px;
+  border: 1px solid #e1e1e1;
+  margin:20px;
+  width:25%;
+  height:50%;
   margin-top: 0px;
   padding: 20px;
 }

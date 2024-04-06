@@ -46,32 +46,42 @@ const InvoiceList = ({userId,isLoggedIn,handleLogout}) => {
       <div>
      {isMobile?(
           <div className={style.BackLink}>
+          <div className={style.backIcon}>
           <FaArrowLeft className={style.arrowIcon} onClick={handleBack}/>
+          </div>
+          <h2 className={style.invoiceListHeader}><Icon path={mdiInvoiceEdit} size={1}/>My Invoices</h2>
           </div>
         ):(
           <div className={style.BackLink}>
           <button onClick={handleBack} className={style.backButton}>
           Back to Home
         </button>
-        </div>
+<h2 className={style.invoiceListHeader}><Icon path={mdiInvoiceEdit} size={1}/>My Invoices</h2>
+        </div>        
         )}
-      <h2 className={style.invoiceListHeader}><Icon path={mdiInvoiceEdit} size={1}/>My Invoices</h2>
+     
       </div>
       <div className={style.invoiceList}>
         {invoices && invoices.length>0 && invoices.map((invoice) => (
-          <div key={invoice._id} className={style.invoiceCard}>
+          <div key={invoice._id}>
+            <div key={invoice._id} className={style.invoiceCard}>
             <>
-            <Icon path={mdiInvoiceEdit} size={2} color="black"></Icon>
+           <div className={style.invoiceDetails}>
+           <Icon path={mdiInvoiceEdit} size={2} color="grey"></Icon>
             <div className={style.invoicedetails}>
             <p>{invoice.userId.name}</p>
             <p>{invoice.deliveryAddress}</p>
             </div>
+           </div>
             <Link to={`/invoice/${invoice._id}`} className={style.viewInvoiceButton}>
               View Invoice
             </Link>
             
             </>
           </div>
+            <hr/>
+          </div>
+
           
         ))}
       </div>
