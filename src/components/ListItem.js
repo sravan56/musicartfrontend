@@ -18,6 +18,7 @@ const ListItem = ({ item ,addtoCart,userId}) => {
   
       if (!userId || !item._id) {
         console.error("User ID or product data missing");
+        navigate('/login');
         return;
       }
 
@@ -40,7 +41,7 @@ const ListItem = ({ item ,addtoCart,userId}) => {
     <div>
       <div key={item._id} className={style.ListitemContainer}>
         <img src={item.images[0]} alt={item.model} />
-        <MdOutlineAddShoppingCart className={style.carticon} onClick={handleCart}/>
+        <MdOutlineAddShoppingCart className={style.listcarticon} onClick={handleCart}/>
         <div className={style.itemDetails}>
           <h3>{item.name}</h3>
           <h4>Price - ₹{item.price}</h4>

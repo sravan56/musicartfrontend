@@ -39,9 +39,10 @@ const InvoiceList = ({userId,isLoggedIn,handleLogout}) => {
   return (
     <div className={style.mainContainer}>
       <Header isLoggedIn={isLoggedIn} handleLogout={handleLogout}/>
+      <Navbar/>
     <div className={style.invoiceListContainer}>
       
-      <Navbar/>
+     
       <div>
      {isMobile?(
           <div className={style.BackLink}>
@@ -70,8 +71,8 @@ const InvoiceList = ({userId,isLoggedIn,handleLogout}) => {
             </Link>
             
             </>
-            
           </div>
+          
         ))}
       </div>
      

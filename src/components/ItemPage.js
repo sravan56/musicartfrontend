@@ -89,8 +89,8 @@ const ItemPage = ({ addtoCart, userId,isLoggedIn }) => {
   return (
     <div className={style.mainContainer}>
       <Header />
+      <Navbar />
       <div className={style.container}>
-        <Navbar />
         <div className={style.backLink}>
           {isMobile ? (
             <FaArrowLeft className={style.arrowIcon} onClick={handleBack} />

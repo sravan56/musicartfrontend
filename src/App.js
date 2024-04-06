@@ -118,7 +118,7 @@ function App() {
         ></Route>
         <Route
           path="/checkout"
-          element={<Checkout cartItems={cartItems} userId={userId} isLoggedIn={isLoggedIn} handleLogout={handleLogout} />}
+          element={<Checkout cartItems={cartItems} userId={userId} userName={userName} isLoggedIn={isLoggedIn} handleLogout={handleLogout} />}
         ></Route>
         <Route path="/invoices" element={<InvoiceList userId={userId}  isLoggedIn={isLoggedIn} handleLogout={handleLogout}/>}></Route>
         <Route path="/invoice/:orderId" element={<Invoice  isLoggedIn={isLoggedIn} handleLogout={handleLogout}/>}></Route>

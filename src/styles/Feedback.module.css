@@ -8,16 +8,16 @@
     overflow:hidden;
     left:calc(50%-200px);
     top:calc(50%-150px);
-    
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
   }
   
-  .feedbackModalContent {
-    background-color: #fefefe;
+  .feedbackModalContent{
+    background:white;
     padding: 20px;
-    width: 300px;
-    border-radius: 10px;
+    width: 250px;
     position: relative;
-    box-shadow: 0px 0px 20px 0px #0000005E;
+    
   }
   
   .closeButton {

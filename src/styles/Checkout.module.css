@@ -198,7 +198,7 @@ text-align: center
   }
 .checkoutContainer{
   margin-top:0px;
-  margin:0px;
+  margin:10px;
 }
   
   .checkoutDivision{
@@ -247,6 +247,7 @@ text-align: center
     text-align: center;
     margin:0;
     border:none;
+    padding:10px;
   }
   .orderSummary span{
     display: none;

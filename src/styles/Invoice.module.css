@@ -137,7 +137,7 @@
   }
 
   .invoiceContainer {
-    margin: 0px;
+    margin: 10px;
     margin-top: 0px;
   }
 
@@ -171,23 +171,24 @@
   .cartItems {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .cartItem {
     flex-direction: column;
     align-items: center;
-    margin: 10px;
+    margin:10px;
+    padding:5px;
     border: 1px solid #2e0052;
     border-radius: 5px;
-    padding: 10px;
   }
 
   .itemImage {
     width: 60px;
     height: 60px;
     object-fit: cover;
-    margin-bottom: 10px;
+    margin-bottom:0px;
+    margin-right: 0px;
   }
 
   .itemDetails {

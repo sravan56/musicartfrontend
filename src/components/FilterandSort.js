@@ -4,6 +4,7 @@ import style from "../styles/Home.module.css";
 import { IoGridOutline } from "react-icons/io5";
 import { FaThList } from "react-icons/fa";
 
+
 const FilterandSort = ({
   selectedHeadphoneType,
   setSelectedHeadphoneType,
@@ -21,6 +22,7 @@ const FilterandSort = ({
   return (
     <div>
       <div className={style.filtersContainer}>
+        <div className={style.filterSection}>
         <div className={style.viewtype}>
           <span onClick={toggleView}>
             <IoGridOutline className={style.gridIcon} />
@@ -91,6 +93,7 @@ const FilterandSort = ({
             <option value="1000-10000">₹1000 - ₹10,000</option>
             <option value="10000-20000">₹10,000 - ₹20,000</option>
           </select>
+        </div>
         </div>
 
         <div className={style.sortContainer}>

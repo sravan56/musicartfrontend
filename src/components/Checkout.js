@@ -7,7 +7,7 @@ import Header from "./Header";
 import Navbar from "./Navbar";
 import {FaArrowLeft} from 'react-icons/fa';
 
-const Checkout = ({ cartItems, userId,isLoggedIn,handleLogout}) => {
+const Checkout = ({ cartItems, userId,userName,isLoggedIn,handleLogout}) => {
   const [finalProducts, setFinalProducts] = useState([]);
   const [deliveryAddress, setDeliveryAddress] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("");
@@ -75,8 +75,9 @@ const Checkout = ({ cartItems, userId,isLoggedIn,handleLogout}) => {
   return (
     <div className={style.mainContainer}>
       <Header isLoggedIn={isLoggedIn} handleLogout={handleLogout}/>
+      <Navbar/>    
     <div className={style.checkoutContainer}>
-      <Navbar/>
+      
       {isMobile?(
           <div className={style.BackLink}>
           <FaArrowLeft className={style.arrowIcon} onClick={handleBack}/>
@@ -94,7 +95,7 @@ const Checkout = ({ cartItems, userId,isLoggedIn,handleLogout}) => {
        <div className={style.checkoutDivision}>
       <div className={style.checkoutSection}>
         <h3>1. Delivery address</h3>
-
+        <p>{userName}</p>
         <input
           type="text"
           placeholder="Enter your delivery address"

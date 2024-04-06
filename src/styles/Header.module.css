@@ -5,13 +5,10 @@ body{
     box-sizing: border-box;
 
 }
-.header{
+.headerContainer{
     background:#2E0052;
     color:white;
     padding:10px;
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
     font-size: 10px;
     font-family: 'Roboto',sans-serif;
     color:white;
@@ -23,6 +20,14 @@ body{
     z-index: 999;
     box-sizing: border-box;
     
+  }
+  .header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left:40px;
+    padding-right:40px;
+
   }
   .linkstyle{
     color:white;

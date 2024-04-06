@@ -95,7 +95,7 @@ const Home = ({
     const sortProducts = async () => {
       try {
         const response = await axios.get(
-          `${baseURL}}/api/items/sort?sortCriteria=${sortCriteria}`
+          `${baseURL}/api/items/sort?sortCriteria=${sortCriteria}`
         );
         setSortedProducts(response.data);
       } catch (error) {

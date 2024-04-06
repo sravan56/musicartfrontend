@@ -47,8 +47,9 @@ const Invoice = ({ isLoggedIn, handleLogout }) => {
   return (
     <div className={style.mainContainer}>
       <Header isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
+      <Navbar />
       <div className={style.invoiceContainer}>
-        <Navbar />
+        
         {isMobile ? (
           <div className={style.BackLink}>
             <FaArrowLeft className={style.arrowIcon} onClick={handleBack} />

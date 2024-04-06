@@ -5,8 +5,9 @@ import { FiPhoneCall } from "react-icons/fi";
 
 const Header = ({ isLoggedIn, handleLogout }) => {
   return (
-    <div className={style.header}>
-      <h2>
+    <div className={style.headerContainer}>
+      <div className={style.header}>
+        <h2>
         {" "}
         <FiPhoneCall /> 912121131313
       </h2>
@@ -29,6 +30,7 @@ const Header = ({ isLoggedIn, handleLogout }) => {
             </Link>
           </h2>
         )}
+      </div>
       </div>
     </div>
   );

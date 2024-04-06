@@ -4,11 +4,14 @@ body{
   box-sizing: border-box;
   height:100%;
 }
+.mainContainer{
+  margin-top:40px;
+  padding: 20px;
+}
 .cartContainer {
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    margin-top:40px;
+    margin-bottom:60px;
   }
   
   .BackLink .backButton{
@@ -109,7 +112,7 @@ body{
     margin-top:0px;
   }
   
-  .quantityControl button {
+  /* .quantityControl button {
     background-color: #ccc;
     border: none;
     padding: 5px 10px;
@@ -118,6 +121,28 @@ body{
   
   .quantityControl span {
     margin: 0 10px;
+  } */
+
+  .css-b62m3t-container {
+    position: relative;
+    box-sizing: border-box;
+    width: 80px;
+    height:20px;
+}
+  .quantityControl .react-select__control {
+    width: 100px; 
+    height:30px;
+  }
+  
+  .quantityControl .react-select__menu {
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background:#bebebe;
+  }
+  
+  .quantityControl .react-select__option--is-selected {
+    background-color: #007bff; 
+    color: #fff; 
   }
   
   .cartSummary {
@@ -170,8 +195,9 @@ body{
     margin-bottom:60px;
   }
   .cartContainer {
-    margin:0;
+    margin:10px;
     padding:0px;
+
   }
   .BackLink{
     float:left;
@@ -192,10 +218,9 @@ body{
 .cartDivision{
   display:flex;
   flex-direction: column;
-  margin:10px;
 }
 .cartMobileView{
-  padding:10px;
+  padding:0px;
 }
 
   .cartItem {
@@ -203,6 +228,9 @@ body{
     align-items: center;
     column-gap:0;
     padding:0;
+    background: #DBDBDB;
+    border-radius: 10px;
+
   }
   .itemDetails{
     display:flex;
@@ -213,11 +241,17 @@ body{
     width: 100px;
     height: 100px;
     margin-bottom: 10px;
+    padding:10px;
+    margin:0;
+    border:none;
+    border-radius: 6px;
   }
 
   .itemDetails {
     text-align: center;
     margin-top:30px;
+    
+
   }
   .itemtitles{
     display:flex;

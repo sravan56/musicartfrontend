@@ -17,6 +17,7 @@ const GridItem = ({ item ,addtoCart,userId}) => {
      
       if (!userId || !item._id) {
         console.error("User ID or product data missing");
+        navigate('/login');
         return;
       }
 

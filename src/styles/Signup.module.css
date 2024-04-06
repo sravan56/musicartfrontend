@@ -17,7 +17,11 @@ body{
   font-size:30px;
   color:#2e0052;
 }
+.musiclogo img{
+  width:40px;
+  height:40px;
 
+}
 .mainContainer{
   width: 80%; 
   max-width: 400px; 
@@ -130,7 +134,29 @@ input[type="password"] {
     width:80%;
     padding: 0 20px;
   }
+  .musiclogo h3{
+    font-family: 'Roboto',sans-serif;
+    font-size:30px;
+    color:white;
+  }
+  .musiclogo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background:#2e0052;
+    color:white;
+  }
+  .musiclogo img{
+    width:40px;
+    height:40px;
+    
+  }
+  .bottomNavContainer{
+    display:none;
+  }
 }
+
 
 
 
