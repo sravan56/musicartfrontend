@@ -33,7 +33,7 @@ const Login = ({onLogin, setAuthToken }) => {
         userData
       );
       const { user,token } = response.data;
-     
+      
     // setAuthToken(token);
     
       console.log("userData", response.data);

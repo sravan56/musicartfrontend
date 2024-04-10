@@ -3,8 +3,6 @@ import axios from "axios";
 import style from "../styles/Invoice.module.css";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import Footer from "./Footer";
-import Header from "./Header";
 import Navbar from "./Navbar";
 import { FaArrowLeft } from "react-icons/fa";
 
@@ -46,7 +44,7 @@ const Invoice = ({ isLoggedIn, handleLogout,userName }) => {
 
   return (
     <div className={style.mainContainer}>
-      <Header isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
+      
       <Navbar />
       <div className={style.invoiceContainer}>
         
@@ -136,7 +134,7 @@ const Invoice = ({ isLoggedIn, handleLogout,userName }) => {
           </div>
         </div>
       </div>
-      <Footer />
+      
     </div>
   );
 };

@@ -1,9 +1,17 @@
 import React from "react";
 import style from "../styles/Header.module.css";
-import { Link } from "react-router-dom";
+import { Link,useNavigate} from "react-router-dom";
 import { FiPhoneCall } from "react-icons/fi";
 
 const Header = ({ isLoggedIn, handleLogout }) => {
+
+
+  const navigate = useNavigate(); 
+
+  const handleLogoutClick = () => {
+    handleLogout(); 
+    navigate("/login"); 
+  };
   return (
     <div className={style.headerContainer}>
       <div className={style.header}>
@@ -15,9 +23,9 @@ const Header = ({ isLoggedIn, handleLogout }) => {
       <div>
         {isLoggedIn ? (
           <h2>
-            <Link onClick={handleLogout} className={style.linkstyle}>
+            <div onClick={handleLogoutClick} className={style.linkstyle}>
               Logout
-            </Link>
+            </div>
           </h2>
         ) : (
           <h2>

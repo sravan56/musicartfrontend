@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import style from "../styles/Home.module.css";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const GridItem = ({ item ,addtoCart,userId}) => {
   const navigate = useNavigate();
@@ -28,9 +30,17 @@ const GridItem = ({ item ,addtoCart,userId}) => {
         productId: item._id,
         quantity: 1, 
       });
-
+     
      
       addtoCart(item._id);
+      toast.success("Item is added to Cart!", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
 
   
       

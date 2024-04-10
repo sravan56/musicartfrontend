@@ -7,8 +7,7 @@ import {FaArrowLeft} from 'react-icons/fa';
 import Icon from '@mdi/react';
 import { mdiInvoiceEdit } from '@mdi/js';
 import Navbar from './Navbar';
-import Header from './Header';
-import Footer from './Footer';
+
 
 
 const InvoiceList = ({userId,isLoggedIn,handleLogout}) => {
@@ -38,7 +37,7 @@ const InvoiceList = ({userId,isLoggedIn,handleLogout}) => {
 
   return (
     <div className={style.mainContainer}>
-      <Header isLoggedIn={isLoggedIn} handleLogout={handleLogout}/>
+      
       <Navbar/>
     <div className={style.invoiceListContainer}>
       
@@ -87,7 +86,7 @@ const InvoiceList = ({userId,isLoggedIn,handleLogout}) => {
       </div>
      
     </div>
-    <Footer/>
+   
     </div>
   );
 };

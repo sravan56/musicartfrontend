@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import style from "../styles/Cart.module.css";
 import { useNavigate } from "react-router-dom";
-import Footer from "./Footer";
-import Header from "./Header";
 import Navbar from "./Navbar";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { FaArrowLeft } from "react-icons/fa";
@@ -84,7 +82,7 @@ const Cart = ({ cartItems, userId, isLoggedIn, handleLogout }) => {
 
   return (
     <div className={style.mainContainer}>
-      <Header isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
+      
       <Navbar />
       <div className={style.cartContainer}>
         {isCartEmpty ? (
@@ -265,7 +263,7 @@ const Cart = ({ cartItems, userId, isLoggedIn, handleLogout }) => {
           </>
         )}
       </div>
-      <Footer />
+      
     </div>
   );
 };

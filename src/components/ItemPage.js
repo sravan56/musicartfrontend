@@ -3,8 +3,6 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import style from "../styles/ItemPage.module.css";
 import { useNavigate } from "react-router-dom";
-import Footer from "./Footer";
-import Header from "./Header";
 import Navbar from "./Navbar";
 import { FaArrowLeft } from "react-icons/fa";
 
@@ -88,7 +86,7 @@ const ItemPage = ({ addtoCart, userId,isLoggedIn,handleLogout }) => {
 
   return (
     <div className={style.mainContainer}>
-      <Header isLoggedIn={isLoggedIn} handleLogout={handleLogout}  />
+      
       <Navbar productName={product.name} />
       <div className={style.container}>
         <div className={style.backLink}>
@@ -171,7 +169,7 @@ const ItemPage = ({ addtoCart, userId,isLoggedIn,handleLogout }) => {
           </div>
         </div>
       </div>
-      <Footer />
+      
     </div>
   );
 };

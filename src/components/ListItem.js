@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import style from "../styles/Home.module.css";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ListItem = ({ item ,addtoCart,userId}) => {
   const navigate = useNavigate();
@@ -31,6 +33,14 @@ const ListItem = ({ item ,addtoCart,userId}) => {
       });
 
       addtoCart(item._id);
+      toast.success("Item is added to Cart!", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
 
       
     } catch (error) {
@@ -39,6 +49,7 @@ const ListItem = ({ item ,addtoCart,userId}) => {
   };
   return (
     <div>
+      
       <div key={item._id} className={style.ListitemContainer}>
         <img src={item.images[0]} alt={item.model} />
         <MdOutlineAddShoppingCart className={style.listcarticon} onClick={handleCart}/>

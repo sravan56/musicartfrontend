@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import style from "../styles/Checkout.module.css";
 import { useNavigate } from "react-router-dom";
-import Footer from "./Footer";
-import Header from "./Header";
 import Navbar from "./Navbar";
 import {FaArrowLeft} from 'react-icons/fa';
 
@@ -75,7 +73,7 @@ const Checkout = ({ cartItems, userId,userName,isLoggedIn,handleLogout,placeOrde
 
   return (
     <div className={style.mainContainer}>
-      <Header isLoggedIn={isLoggedIn} handleLogout={handleLogout}/>
+      
       <Navbar/>    
     <div className={style.checkoutContainer}>
       
@@ -230,7 +228,7 @@ const Checkout = ({ cartItems, userId,userName,isLoggedIn,handleLogout,placeOrde
       
        </div>
     </div>
-    <Footer/>
+   
     </div>
   );
 };

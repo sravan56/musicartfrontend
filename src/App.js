@@ -1,6 +1,8 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route,useLocation} from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import Home from "./components/Home";
@@ -15,6 +17,7 @@ import { useNavigate } from "react-router-dom";
 import Sucesspage from "./components/Sucesspage";
 import BottomNavbar from "./components/BottomNavbar";
 import { useMediaQuery } from "react-responsive";
+
 
 function App() {
   const [userId, setUserId] = useState("");
@@ -44,15 +47,21 @@ function App() {
 
   const navigate = useNavigate();
 
+  const location = useLocation();
+  const { pathname } = location;
+
+ 
+  const hideHeaderRoutes = ["/login","/signup"];
+  const shouldHideHeader = hideHeaderRoutes.includes(pathname);
+
   const handleLogout = () => {
+    navigate("/login");
     setIsLoggedIn(false);
     setUserName("");
     localStorage.removeItem("userId");
     localStorage.removeItem("userName");
     localStorage.removeItem("authToken");
-
     delete axios.defaults.headers.common["Authorization"];
-    navigate("/login");
   };
 
   const handleLogin = (user, token) => {
@@ -78,9 +87,9 @@ function App() {
     console.log(cartItems);
   };
 
-  const placeOrder= async()=>{
+  const placeOrder = async () => {
     setCartItemCount(0);
-  }
+  };
 
   useEffect(() => {
     const fetchCartItems = async () => {
@@ -99,6 +108,7 @@ function App() {
   }, [userId]);
   return (
     <div className="App">
+      {!shouldHideHeader && <Header isLoggedIn={isLoggedIn} handleLogout={handleLogout} />}
       <Routes>
         <Route
           path="/"
@@ -108,8 +118,7 @@ function App() {
               userId={userId}
               userName={userName}
               cartItemCount={cartItemCount}
-              isLoggedIn={isLoggedIn}
-              handleLogout={handleLogout}
+              
               isMobile={isMobile}
             />
           }
@@ -120,8 +129,7 @@ function App() {
             <ItemPage
               addtoCart={addtoCart}
               userId={userId}
-              isLoggedIn={isLoggedIn}
-              handleLogout={handleLogout}
+              
             />
           }
         ></Route>
@@ -131,8 +139,7 @@ function App() {
             <Cart
               cartItems={cartItems}
               userId={userId}
-              isLoggedIn={isLoggedIn}
-              handleLogout={handleLogout}
+             
             />
           }
         ></Route>
@@ -143,8 +150,7 @@ function App() {
               cartItems={cartItems}
               userId={userId}
               userName={userName}
-              isLoggedIn={isLoggedIn}
-              handleLogout={handleLogout}
+              
               placeOrder={placeOrder}
             />
           }
@@ -154,15 +160,17 @@ function App() {
           element={
             <InvoiceList
               userId={userId}
-              isLoggedIn={isLoggedIn}
-              handleLogout={handleLogout}
+             
             />
           }
         ></Route>
         <Route
           path="/invoice/:orderId"
           element={
-            <Invoice isLoggedIn={isLoggedIn} handleLogout={handleLogout} userName={userName} />
+            <Invoice
+             
+              userName={userName}
+            />
           }
         ></Route>
         <Route path="/login" element={<Login onLogin={handleLogin} />}></Route>
@@ -177,6 +185,7 @@ function App() {
           cartItemCount={cartItemCount}
         />
       )}
+      <Footer />
     </div>
   );
 }

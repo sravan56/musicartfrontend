@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Header from "./Header";
-import Footer from "./Footer";
 import image5 from "../images/image_5.png";
 import style from "../styles/Home.module.css";
 import axios from "axios";
@@ -11,6 +9,8 @@ import SearchBar from "./SearchBar";
 import FilterandSort from "./FilterandSort";
 import Feedback from "./Feedback";
 import { VscFeedback } from "react-icons/vsc";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 const Home = ({
@@ -120,9 +120,8 @@ const Home = ({
 
   return (
     <div className={style.HomeContainer}>
-      <Header isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
       <div className={style.mainContainer}>
-        
+        <ToastContainer/>
         {isMobile?(
           <>
           <SearchBar
@@ -283,7 +282,7 @@ const Home = ({
         
       </div>
       
-      <Footer />
+      
     </div>
   );
 };
