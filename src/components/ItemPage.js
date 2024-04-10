@@ -8,7 +8,7 @@ import Header from "./Header";
 import Navbar from "./Navbar";
 import { FaArrowLeft } from "react-icons/fa";
 
-const ItemPage = ({ addtoCart, userId,isLoggedIn }) => {
+const ItemPage = ({ addtoCart, userId,isLoggedIn,handleLogout }) => {
   const { itemId } = useParams();
   const [product, setProduct] = useState("");
   const [mainImageIndex, setMainImageIndex] = useState(0);
@@ -88,8 +88,8 @@ const ItemPage = ({ addtoCart, userId,isLoggedIn }) => {
 
   return (
     <div className={style.mainContainer}>
-      <Header />
-      <Navbar />
+      <Header isLoggedIn={isLoggedIn} handleLogout={handleLogout}  />
+      <Navbar productName={product.name} />
       <div className={style.container}>
         <div className={style.backLink}>
           {isMobile ? (

@@ -14,24 +14,23 @@ import Invoice from "./components/Invoice";
 import { useNavigate } from "react-router-dom";
 import Sucesspage from "./components/Sucesspage";
 import BottomNavbar from "./components/BottomNavbar";
-import { useMediaQuery } from 'react-responsive';
+import { useMediaQuery } from "react-responsive";
 
 function App() {
   const [userId, setUserId] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userName,setUserName]=useState('');
+  const [userName, setUserName] = useState("");
   const [cartItems, setCartItems] = useState([]);
   const [cartItemCount, setCartItemCount] = useState(0);
 
-  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
-  const baseURL='https://musicartbackend-a7k3.onrender.com';
-
+  const baseURL = "https://musicartbackend-a7k3.onrender.com";
 
   useEffect(() => {
     const authToken = localStorage.getItem("authToken");
     const storedUserId = localStorage.getItem("userId");
-    const userName=localStorage.getItem('userName');
+    const userName = localStorage.getItem("userName");
     if (authToken && storedUserId && userName) {
       setUserId(storedUserId);
       setUserName(userName);
@@ -47,9 +46,9 @@ function App() {
 
   const handleLogout = () => {
     setIsLoggedIn(false);
-    setUserName('');
+    setUserName("");
     localStorage.removeItem("userId");
-    localStorage.removeItem('userName');
+    localStorage.removeItem("userName");
     localStorage.removeItem("authToken");
 
     delete axios.defaults.headers.common["Authorization"];
@@ -60,9 +59,9 @@ function App() {
     setUserId(user.userId);
     console.log(userId);
     setUserName(user.name);
-  
+
     localStorage.setItem("userId", user.userId);
-    localStorage.setItem('userName',user.name);
+    localStorage.setItem("userName", user.name);
 
     setIsLoggedIn(true);
 
@@ -75,13 +74,20 @@ function App() {
   const addtoCart = (productId) => {
     const updatedCart = [...cartItems, productId];
     setCartItems(updatedCart);
+    setCartItemCount(cartItemCount + 1);
     console.log(cartItems);
   };
+
+  const placeOrder= async()=>{
+    setCartItemCount(0);
+  }
 
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
-        const response = await axios.get(`${baseURL}/api/cart/userCart/${userId}`);
+        const response = await axios.get(
+          `${baseURL}/api/cart/userCart/${userId}`
+        );
         setCartItems(response.data.cart.cartItems);
         setCartItemCount(response.data.cart.cartItems.length);
       } catch (error) {
@@ -110,24 +116,67 @@ function App() {
         ></Route>
         <Route
           path="/product/:itemId"
-          element={<ItemPage addtoCart={addtoCart} userId={userId} isLoggedIn={isLoggedIn} />}
+          element={
+            <ItemPage
+              addtoCart={addtoCart}
+              userId={userId}
+              isLoggedIn={isLoggedIn}
+              handleLogout={handleLogout}
+            />
+          }
         ></Route>
         <Route
           path="/cart"
-          element={<Cart cartItems={cartItems} userId={userId} isLoggedIn={isLoggedIn} handleLogout={handleLogout}/>}
+          element={
+            <Cart
+              cartItems={cartItems}
+              userId={userId}
+              isLoggedIn={isLoggedIn}
+              handleLogout={handleLogout}
+            />
+          }
         ></Route>
         <Route
           path="/checkout"
-          element={<Checkout cartItems={cartItems} userId={userId} userName={userName} isLoggedIn={isLoggedIn} handleLogout={handleLogout} />}
+          element={
+            <Checkout
+              cartItems={cartItems}
+              userId={userId}
+              userName={userName}
+              isLoggedIn={isLoggedIn}
+              handleLogout={handleLogout}
+              placeOrder={placeOrder}
+            />
+          }
         ></Route>
-        <Route path="/invoices" element={<InvoiceList userId={userId}  isLoggedIn={isLoggedIn} handleLogout={handleLogout}/>}></Route>
-        <Route path="/invoice/:orderId" element={<Invoice  isLoggedIn={isLoggedIn} handleLogout={handleLogout}/>}></Route>
+        <Route
+          path="/invoices"
+          element={
+            <InvoiceList
+              userId={userId}
+              isLoggedIn={isLoggedIn}
+              handleLogout={handleLogout}
+            />
+          }
+        ></Route>
+        <Route
+          path="/invoice/:orderId"
+          element={
+            <Invoice isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
+          }
+        ></Route>
         <Route path="/login" element={<Login onLogin={handleLogin} />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/view" element={<HomeView />}></Route>
-        <Route path='/sucess' element={<Sucesspage/>}></Route>
+        <Route path="/sucess" element={<Sucesspage />}></Route>
       </Routes>
-      {isMobile&&<BottomNavbar isLoggedIn={isLoggedIn} handleLogout={handleLogout} cartItemCount={cartItemCount}/>}
+      {isMobile && (
+        <BottomNavbar
+          isLoggedIn={isLoggedIn}
+          handleLogout={handleLogout}
+          cartItemCount={cartItemCount}
+        />
+      )}
     </div>
   );
 }

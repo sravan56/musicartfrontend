@@ -98,6 +98,7 @@ body{
   }
   .itemprice{
     width:150px;
+    margin-left:50px;
   }
   .itemprice h3{
     margin-top:0px;
@@ -108,6 +109,9 @@ body{
   }
   .quantityControl h3{
     margin-top:0px;
+  }
+  .totalprice{
+    margin-left:70px;
   }
   .totalprice h3{
     margin-top:0px;

@@ -56,7 +56,12 @@
     
 
   }
-
+.userAdress{
+  width:50%;
+}
+.userAdress p{
+  text-align: start;
+}
   .checkoutSection h3{
     color: #B52B00;
     
@@ -238,6 +243,9 @@ text-align: center
   .addressInput,
   .paymentSelect {
     width: 100%;
+  }
+  .userAdress{
+    width:100%;
   }
 
   .cartItem {

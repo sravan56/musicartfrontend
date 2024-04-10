@@ -6,8 +6,6 @@
     bottom:50px;
     right:100px;
     overflow:hidden;
-    left:calc(50%-200px);
-    top:calc(50%-150px);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 10px;
   }
@@ -113,8 +111,14 @@ outline:none;
   
   /* Responsive Styles */
   @media screen and (max-width: 768px) {
-    .feedbackModalContent {
-      width: 80%;
-      margin: 30% auto;
+    .feedbackModal{
+      margin-bottom:40px;
+      bottom:50px;
+    right:20px;
+    }
+    .feedbackModalContent{
+      width:200px;
+    
+
     }
   }

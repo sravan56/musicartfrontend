@@ -148,11 +148,15 @@
   }
 
   .BackLink {
-    float: left;
+    display:flex;
+
     margin-top: 10px;
     margin-bottom: 10px;
   }
 
+  .arrowIcon{
+    margin-top:20px;
+  }
   .backButton {
     width: 100%;
   }
@@ -165,12 +169,21 @@
   flex-direction: column;
   margin:10px;
 }
+.invoiceDivision{
+  width:100%;
+}
 
   .invoiceSection {
     margin-bottom: 20px;
+    display:flex;
+    flex-direction: column;
+    justify-items: left;
+    align-content: flex-start;
+    flex-wrap: wrap;
   }
 
   .invoiceSection h3 {
+    text-align: left;
     color: #b52b00;
   }
 

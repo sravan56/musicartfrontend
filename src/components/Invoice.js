@@ -53,6 +53,7 @@ const Invoice = ({ isLoggedIn, handleLogout }) => {
         {isMobile ? (
           <div className={style.BackLink}>
             <FaArrowLeft className={style.arrowIcon} onClick={handleBack} />
+            <h2 className={style.invoiceHeader}>Invoice</h2>
           </div>
         ) : (
           <div className={style.BackLink}>

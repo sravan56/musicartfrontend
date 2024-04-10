@@ -130,18 +130,15 @@ color: #969696;
 .BackLink{
   margin-bottom: 20px;
 }
-/* .backIcon{
+.backIcon{
   width:40px;
   height:40px;
   display: flex;
   align-items: center;
   
-  border-radius: 50%;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+  
 }
-.arrowIcon{
-  justify-self: center;
-} */
+
  .invoiceList{
   display:flex;
   flex-direction: column;

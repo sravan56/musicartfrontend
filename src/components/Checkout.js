@@ -7,7 +7,7 @@ import Header from "./Header";
 import Navbar from "./Navbar";
 import {FaArrowLeft} from 'react-icons/fa';
 
-const Checkout = ({ cartItems, userId,userName,isLoggedIn,handleLogout}) => {
+const Checkout = ({ cartItems, userId,userName,isLoggedIn,handleLogout,placeOrder}) => {
   const [finalProducts, setFinalProducts] = useState([]);
   const [deliveryAddress, setDeliveryAddress] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("");
@@ -65,6 +65,7 @@ const Checkout = ({ cartItems, userId,userName,isLoggedIn,handleLogout}) => {
 
       console.log("Order placed:", response.data);
       setFinalProducts([]);
+      placeOrder(0);
       console.log('Cart items cleared:', cartItems);
       navigate("/sucess"); 
     } catch (error) {
@@ -81,6 +82,7 @@ const Checkout = ({ cartItems, userId,userName,isLoggedIn,handleLogout}) => {
       {isMobile?(
           <div className={style.BackLink}>
           <FaArrowLeft className={style.arrowIcon} onClick={handleBack}/>
+          <h2 className={style.checkoutHeader}>Checkout</h2>
           </div>
         ):(
           <div className={style.BackLink}>
@@ -96,7 +98,7 @@ const Checkout = ({ cartItems, userId,userName,isLoggedIn,handleLogout}) => {
        <div className={style.checkoutDivision}>
       <div className={style.checkoutSection}>
         <h3>1. Delivery address</h3>
-        <div>
+        <div className={style.userAdress}>
         <p>{userName}</p>
         <textarea
           type="text"
