@@ -162,7 +162,7 @@ function App() {
         <Route
           path="/invoice/:orderId"
           element={
-            <Invoice isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
+            <Invoice isLoggedIn={isLoggedIn} handleLogout={handleLogout} userName={userName} />
           }
         ></Route>
         <Route path="/login" element={<Login onLogin={handleLogin} />}></Route>

@@ -41,6 +41,23 @@
   width:70%;
 
 }
+.userAdress{
+  width:50%;
+}
+.userAdress p{
+  text-align:left;
+}
+.paytype {
+  border: 1px solid #E1E1E1;
+  width:50%;
+  border-radius: 5px;
+  padding: 5px;
+
+}
+.paytype p{
+  text-align: left;
+}
+
 .orderSummary{
   flex: 1;
   border-radius: 6px;
@@ -182,6 +199,12 @@
     flex-wrap: wrap;
   }
 
+  .userAdress{
+    width:100%;
+  }
+  .paytype{
+    width: 100%;
+  }
   .invoiceSection h3 {
     text-align: left;
     color: #b52b00;

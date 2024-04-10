@@ -8,7 +8,7 @@ import Header from "./Header";
 import Navbar from "./Navbar";
 import { FaArrowLeft } from "react-icons/fa";
 
-const Invoice = ({ isLoggedIn, handleLogout }) => {
+const Invoice = ({ isLoggedIn, handleLogout,userName }) => {
   const { orderId } = useParams();
   const [order, setOrder] = useState("");
 
@@ -69,12 +69,18 @@ const Invoice = ({ isLoggedIn, handleLogout }) => {
           <div className={style.invoiceDivision}>
             <div className={style.invoiceSection}>
               <h3>1.Delivery Address</h3>
+              <div className={style.userAdress}>
+              <p>{userName}</p>
               <p>{order.deliveryAddress}</p>
+              </div>
             </div>
             <hr />
             <div className={style.invoiceSection}>
               <h3>2.Payment Method: </h3>
-              <p>{order.paymentMethod}</p>
+              <div className={style.paytype}>
+              <p >{order.paymentMethod}</p>
+              </div>
+              
             </div>
             <hr />
             <div className={style.invoiceSection}>

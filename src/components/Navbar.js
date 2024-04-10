@@ -16,6 +16,7 @@ const Navbar = ({
 }) => {
   const location = useLocation();
   const { pathname } = location;
+  
   const {itemId,orderId}=useParams();
 
   const isMobile = window.innerWidth <= 768;
